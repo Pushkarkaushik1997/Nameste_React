@@ -9,7 +9,6 @@ import data from './data.json';
 import { useState } from 'react';
 const root = ReactDOM.createRoot(document.getElementById("root"));
  
-
 const Logo = () => {
   return <div className="logo"> Hustlers</div>;
 };
