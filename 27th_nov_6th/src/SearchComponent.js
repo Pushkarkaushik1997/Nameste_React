@@ -1,25 +1,23 @@
 import { useState } from "react";
-import data from "./data.json";
 
-const SearchDetails = (searchText) => {
+const SearchDetails = (searchText,githubData) => {
     //logic for searching insid  e data
-  return data.filter(
+  return githubData.filter(
     (res) =>
-      res.name.toLowerCase().includes(searchText.toLowerCase()) ||
-      res.currentRole.toLowerCase().includes(searchText.toLowerCase())||
-      res.city.toLowerCase().includes(searchText.toLowerCase())||
-      res.company.toLowerCase().includes(searchText.toLowerCase())
+      res?.name?.toLowerCase().includes(searchText.toLowerCase()) ||
+      res?.location?.toLowerCase().includes(searchText.toLowerCase())||
+      res?.company?.toLowerCase().includes(searchText.toLowerCase())
   );
 };
 
-const SearchComponent = ({ setFilteredPersons }) => {
+const SearchComponent = ({ githubData, setFilteredPersons }) => {
   const [searchText, setSearchtext] = useState("");
   return (
     <div className="search">
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          const searchresults = SearchDetails(searchText);
+          const searchresults = SearchDetails(searchText,githubData);
           setFilteredPersons(searchresults);
         }}
       >

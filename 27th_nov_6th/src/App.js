@@ -62,7 +62,7 @@ const HeadingComponent = () => {
   }
   
   const getTeamMembers = async() => {
-    const githubUserNames = ["pushkarkaushik1997","shrinker03", "ruchamahabal", "rishav-sah", "vinaysaip", "Pratik33", "shubhamyadav30", "ShailendraSinghRaikwar", "abhishekps782", "mojahidhd", "taj0598"]
+    const githubUserNames = ["pushkarkaushik1997","SharmilaNarendra","shrinker03", "ruchamahabal", "rishav-sah", "Pratik33", "shubhamyadav30", "ShailendraSinghRaikwar", "abhishekps782", "mojahidhd"]
     let users = await fetchData(githubUserNames)
     setGithubData(users)
     setFilteredPersons(users)
@@ -72,7 +72,7 @@ const HeadingComponent = () => {
       <div className="mainPage">
         <div className="innerDiv">
           <Logo />
-          <SearchComponent data={githubData} setFilteredPersons={setFilteredPersons} />
+          <SearchComponent githubData={githubData} setFilteredPersons={setFilteredPersons} />
           <Avatar />
         </div>
         <div className="bodyDiv">

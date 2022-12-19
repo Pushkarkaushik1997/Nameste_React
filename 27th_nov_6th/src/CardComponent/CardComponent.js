@@ -4,11 +4,11 @@ const CardComponent = (props) => {
   const person = props.person;
   return (
       <div id="card" className="card">
-          <img src={person.img} />
-          <h2>{person.name}</h2>
-          <h3>{person.city}</h3>
-          <p>{person.company}</p>
-          <p>{person.currentRole}</p>
+          <img src={person?.avatar_url} />
+          <h2>{person?.name}</h2>
+          <h3>{person?.location}</h3>
+          <p>{person?.company}</p>
+          <p>{person?.currentRole}</p>
       </div>
   )
 }
